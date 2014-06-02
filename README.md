@@ -10,6 +10,6 @@ Just download and rename folder to Tickets.codawebscriptsidebar
 
 * Editing existent tickets
 
-### Background
+## Background
 
 Based on the new API for HTML-Sidebars in Coda. Saves Data in html5 local storage in json. 

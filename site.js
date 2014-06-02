@@ -12,10 +12,17 @@
 //	Date (DD.MM.YY): 02.06.14
 
 var json;
-var projektID = CodaTextView.siteUUID() + '_todo';
+var projektUUID = CodaTextView.siteUUID();
+var projektID = projektUUID + '_todo';
 
-var projektPath = CodaTextView.siteLocalPath();
+setInterval(function(){
 
+	if(projektUUID != CodaTextView.siteUUID()) {
+		projektID = CodaTextView.siteUUID() + '_todo';
+		getTodos();
+	}
+
+}, 1000);
 
 function getTodos() {
 
@@ -33,7 +40,13 @@ function getTodos() {
 		var i = 0;
 		$.each(json, function() {
 
-			var fileName = this['file'].replace(projektPath,'');
+
+			if(this['file'] != false) {
+				var fileName = this['file'].replace(CodaTextView.siteLocalPath(),'');
+			}
+			else {
+				var fileName = this['file'];
+			}
 
 			if(this['state'] === 'done') {
 				outputDone += '<div class="todo '+ this['state'] +'" id="todo_'+ this['id'] +'" data-type="'+ this['type'] +'"><div class="todoTop">';
@@ -131,6 +144,13 @@ function akkordeon() {
 	});
 }
 
+function clearform() {
+	$('#addTodoDialogForm').trigger("reset");
+	$('#addTodoDialogForm input').removeAttr('checked');
+	$('.addIcon').removeClass('active');
+	$('#addTodoDialog').hide();
+}
+
 
 $(document).ready(function () {
 
@@ -164,9 +184,8 @@ $(document).ready(function () {
 
 		if($("input:radio:checked[name='addTodoType']").val() != undefined && $("#addTodoTitle").val() != '' && $("#addTodoDescription").val() != '') {
 			addTodo($("input[name='addTodoType']:checked").val(), $("#addTodoTitle").val(), $("#addTodoDescription").val(), false);
+			clearform();
 		}
-		$('#addTodoDialogForm').trigger("reset");
-		$('#addTodoDialog').hide();
 		return false;
 	});
 
@@ -174,13 +193,10 @@ $(document).ready(function () {
 	$('#submitTodoLine').click(function(){
 		if($("input:radio:checked[name='addTodoType']").val() != undefined && $("#addTodoTitle").val() != '' && $("#addTodoDescription").val() != '') {
 			addTodo($("input[name='addTodoType']:checked").val(), $("#addTodoTitle").val(), $("#addTodoDescription").val(), true);
+			clearform();
 		}
-		$('#addTodoDialog').hide();
-		$('#addTodoDialogForm').trigger("reset");
 		return false;
 	});
-
-	getTodos();
 
 
 });
