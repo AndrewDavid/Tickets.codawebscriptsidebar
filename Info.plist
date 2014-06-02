@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CodaIconMaskFile</key>
+	<string>icon</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mediaism.Ticket</string>
+	<key>CFBundleName</key>
+	<string>Tickets</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.5</string>
+	<key>CodaPlugInSupportedAPIVersion</key>
+	<integer>7</integer>
+	<key>CodaDescriptionString</key>
+	<string>Simple Ticket-Tool</string>
+	<key>CodaIconMaskTintString</key>
+	<string>#91B05A</string>
+	<key>CodaAuthorString</key>
+	<string>Bjoern Diekert . mediaism</string>
+</dict>
+</plist>
