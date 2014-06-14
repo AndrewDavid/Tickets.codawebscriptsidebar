@@ -12,13 +12,13 @@
 //	Date (DD.MM.YY): 02.06.14
 
 var json;
-var projektUUID = CodaTextView.siteUUID();
+var projektUUID = CodaTextView.siteNickname();
 var projektID = projektUUID + '_todo';
 
 setInterval(function(){
 
-	if(projektUUID != CodaTextView.siteUUID()) {
-		projektID = CodaTextView.siteUUID() + '_todo';
+	if(projektUUID != CodaTextView.siteNickname()) {
+		projektID = CodaTextView.siteNickname() + '_todo';
 		getTodos();
 	}
 
