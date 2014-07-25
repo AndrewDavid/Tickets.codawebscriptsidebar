@@ -146,18 +146,16 @@ function akkordeon() {
 
 function clearform() {
 	$('#addTodoDialogForm').trigger("reset");
-	$('#addTodoDialogForm input').removeAttr('checked');
-	$('.addIcon').removeClass('active');
-	$('#addTodoDialog').hide();
 }
 
 
 $(document).ready(function () {
-
-	$('#addTodoDialog').hide();
+	
+	$('input:radio[name=addTodoType]:nth(0)').attr('checked',true);
 
 	$('#addTodoButton').click(function(){
-		$('#addTodoDialog').show();
+		$(this).toggleClass('active');
+		$('#addTodoDialog').toggle();
 	});
 
 	// ADD Todo Dialog

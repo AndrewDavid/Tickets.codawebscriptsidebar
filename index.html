@@ -1,20 +1,16 @@
-<html>
-	<head>
+<html><head>
 		<title>Todo</title>
 
 			<script src="jquery.js" type="text/javascript"></script>
 			<script src="site.js" type="text/javascript"></script>
-			<link href="global.css" rel="stylesheet" type="text/css" />
-			<meta charset="UTF-8" />
+			<link href="global.css" rel="stylesheet" type="text/css">
+			<meta charset="UTF-8">
 
 	</head>
 
 	<body onload="getTodos();">
 
-		<div id="toolbar">
-			<div id="filter"></div> <!-- #filter -->
-			<div id="addTodoButton"></div> <!-- #addTodoButton -->
-		</div> <!-- #toolbar -->
+		 <!-- #toolbar -->
 
 		<div id="site">
 
@@ -22,15 +18,10 @@
 
 				<form id="addTodoDialogForm" action="">
 
-					<div id="addTodoLeft">
-						<input type="text" name="addTodoTitle" id="addTodoTitle" placeholder="Title" />
-						<textarea name="addTodoDescription" id="addTodoDescription" cols="30" rows="10" placeholder="Description"></textarea>
-					</div> <!-- #addTodoLeft -->
-
 					<div id="addTodoRight">
-						<div class="addIcon bug" id="addBug">BUG</div> <!-- .addIcon bug -->
-						<div class="addIcon feat" id="addFeat">FEAT</div> <!-- .addIcon feat -->
-						<div class="addIcon todo" id="addTodo">TODO</div> <!-- .addIcon todo -->
+						<div class="addIcon active" id="addBug">Bug</div> <!-- .addIcon bug -->
+						<div class="addIcon" id="addFeat">Feat</div> <!-- .addIcon feat -->
+						<div class="addIcon" id="addTodo">Todo</div> <!-- .addIcon todo -->
 
 						<div class="hide">
 							<input type="radio" name="addTodoType" value="bug">
@@ -38,10 +29,15 @@
 							<input type="radio" name="addTodoType" value="todo">
 						</div> <!-- .hide -->
 
-					</div> <!-- #addTodoRight -->
+					</div><div id="addTodoLeft">
+						<input type="text" name="addTodoTitle" id="addTodoTitle" placeholder="Title">
+						<textarea name="addTodoDescription" id="addTodoDescription" cols="30" rows="10" placeholder="Description"></textarea>
+					</div> <!-- #addTodoLeft -->
 
-					<input type="submit" value="Submit with Line" id="submitTodoLine" />
-					<input type="submit" value="Submit" id="submitTodo" />
+					 <!-- #addTodoRight -->
+
+					<input type="submit" value="Submit with Line" id="submitTodoLine">
+					<input type="submit" value="Submit" id="submitTodo">
 
 
 				</form>
@@ -49,17 +45,13 @@
 			</div> <!-- #addTodo -->
 
 
-			<div id="todoList">
+			<div id="todoList"></div> <!-- #todoList -->
 
-			</div> <!-- #todoList -->
-
-			<div id="todoListDone">
-
-			</div> <!-- #todoListDone -->
+			<div id="todoListDone"></div> <!-- #todoListDone -->
 
 
 		</div> <!-- #site -->
 
-	</body>
+	
 
-</html>
+</body></html>
